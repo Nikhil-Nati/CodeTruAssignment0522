@@ -1,0 +1,163 @@
+
+#root{
+  font-size: 23px;
+  font-family: "Calibri";
+  z-index: 0;
+}
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:rgb(255, 255, 255);
+  width:100%;
+}
+.sidebarLink{
+    padding:16px;
+    background-color:rgb(255, 255, 255);
+    width:100%;
+    text-decoration:none;
+}
+.sidebarLink:hover{
+  background-color:rgb(235, 233, 233)}
+
+button{
+  padding:15px;
+  background-color: #0265fa;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #fffefe;
+}
+input{
+  padding:15px;
+  border: none;
+  background-color: rgb(244, 245, 245);
+  border-radius: 8px;
+  font-size: 15px;
+  margin: 1%;
+}
+span.data{
+  font-size: 15px;
+  padding: 10px;
+  width: 10%;
+  display: inline-block; 
+}
+button.action{
+  padding-top:10px;
+  background-color: #fcfdfd;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #636262;
+}
+.grid-item1 { grid-area:nav ;padding:5% ;border-radius: 9px; width:30%;}
+.grid-item2{
+  grid-area:search ;
+  padding: 12px 20px;
+ border-radius: 4px;
+  margin-bottom:150px;
+  position:  fixed;
+  top:0%;
+  right: 20%;
+  left:20%;
+ background-color: #fdfcfc;
+ height: 200px;align-items: center;
+
+  }
+  .input{
+    
+   border: 1px solid #ccc;
+    border-radius: 4px;
+   right: 10%;
+   width:80%;
+    }
+.grid-item3 { grid-area:body ;
+  padding:5% ;
+  width: 70%;
+  left:30%;
+  top:200px ;
+  padding-right: 10%;
+}
+.grid-item4 { 
+  grid-area:profile ;
+  height: 200px;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'nav  search profile'
+   'nav  body body'
+    'nav body body';
+    
+  background-color: #fcfdfd;
+  padding: 2%;
+  height: 100%;
+  }
+  .vl {
+    border-left: 2px solid rgb(231, 231, 231);
+    height: 1000px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    top: 150px;
+    left: 35%;
+    padding: 20px;
+    border-radius: 14px;
+    width: 28%;
+    height: 340px;
+    position: fixed;
+    z-index: 2;
+    text-align: center;
+    box-shadow:#fffefe;
+  }
+  .modalDiv{
+    z-index: 1;
+    opacity: 0.5;
+    background-color: black;
+    width:100%;
+    height: 100%;
+    position:fixed;
+    display:none;
+  }
+  .spanButton{
+    padding:10px;
+    position:fixed;
+    top: 20px;
+    border: 1px solid #ccc;
+     border-radius: 4px;
+    width:auto;
+     }
+     .spanButton:hover{
+      background-color: #ebebeb;
+      
+       }
+  .profileImg{
+    position:  fixed;
+    right:2%;
+    top:20px;
+    border-radius: 50%;
+  }
+  .profileBox{
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    right:2%;
+    z-index: 0;
+    background-color: #f1f5fc;
+  }
+  .profileItem{
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+    height:20%;
+  }
+  .pay{
+    position: fixed;
+    width: 40%;
+    left: 30%;
+  }
