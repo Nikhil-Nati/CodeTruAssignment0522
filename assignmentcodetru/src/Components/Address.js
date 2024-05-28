@@ -1,12 +1,11 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import { context } from '../App';
 
 function Address() {
  const [Line1,setLine1]=useState("");
  const [Line2,setLine2]=useState("");
  const [addressId,setIddressId]=useState(0);
- const [arr,setArr]=useState([]);
- const {addresses,setAddresses,nav}=useContext(context);
+ const {addresses,setAddresses,nav,currentStep, setCurrentStep}=useContext(context);
  
 const inputHandler=(e)=>{
 switch(e.target.name){
@@ -21,14 +20,17 @@ switch(e.target.name){
     }
 
 }
+useEffect(()=>{
+    console.log(addresses);
+},[addresses])
 const submit=()=>{
-   setAddresses([...addresses,{addressLine1:Line1,addressLine2:Line2,id:addressId}]);
+   setAddresses([...addresses,{addressLine1:Line1,addressLine2:Line2,idnty:addressId}]);
    setLine1(""); 
    setLine2("");
    setIddressId(addressId+1);
 }
-const remove=(e)=>{
-    setAddresses(addresses.filter((j)=> j.id!=e.target.id));
+const remove=(idnty)=>{
+    setAddresses(addresses.filter((j)=> j.idnty!=idnty));
                  }
 
   return (
@@ -40,7 +42,7 @@ const remove=(e)=>{
         addresses.map((address)=>{
         return <div>
         <span className="data">{address.addressLine1}</span> <span className="data">{address.addressLine2}</span>
-        <button className="action"onClick={remove}id={address.id}>
+        <button className="action"onClick={()=>remove(address.idnty)} id={address.idnty}>
             <span class="material-symbols-outlined">delete</span>
         </button>
         
@@ -48,7 +50,10 @@ const remove=(e)=>{
     </div>
     })
     }
-    <br/><br/><button onClick={()=>nav('Pay')}>Next</button></div>
+    <br/><br/>
+    <button disabled={(addresses.length===0)}
+    onClick={()=>{nav('Pay');
+    if(currentStep<3)setCurrentStep(currentStep+1)}}>Next</button></div>
   )
 }
 

@@ -157,7 +157,50 @@ button.action{
     height:20%;
   }
   .pay{
-    position: fixed;
+    position: absolute;
     width: 40%;
     left: 30%;
   }
+  .progress-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 30px;
+    width:70%;
+    margin: auto;
+    font-size: 15px;
+    justify-content: space-between;
+  }
+  
+  .step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    position: absolute;
+    top: 30%;
+  }
+  
+  .step.active {
+    background-color: #0265fa;
+    color: white;
+  }
+  
+  .label {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  

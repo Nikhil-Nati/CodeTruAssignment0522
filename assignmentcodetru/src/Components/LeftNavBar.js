@@ -15,7 +15,8 @@ function LeftNavBar() {
     const [collapse,setCollapse]=useState(true)
   return (
     <div className="sidebar" style={{"width":collapse?"20px":"15%"}} >
-      <a onClick={()=>setCollapse(!collapse)}><span className='material-symbols-outlined '>menu{collapse&&"_open"}</span></a>
+      <a onClick={()=>setCollapse(!collapse)}><span className='material-symbols-outlined ' 
+      style={{'paddingLeft':"15px",'paddingTop':"10px"}}>menu{collapse&&"_open"}</span></a>
     {options.map((option)=>
     <div className="sidebarLink">
       <LeftNavBarItem title={option.title}iconContent={option.iconContent} collapse={collapse}/>

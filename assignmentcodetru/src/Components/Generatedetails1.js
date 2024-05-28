@@ -18,7 +18,8 @@ function Generatedetails1() {
     <div><div>Basic Details</div>
         <input type="text" placeholder='Name' value={Name} name='Name' onChange={inputHandler}/>
         <input type="date" placeholder='Date of Birth' value={dob} name='dob' onChange={inputHandler}/><br/><br/>
-        <button disabled={(Name.trim().length===0||dob.trim().length===0)}onClick={()=>nav('GenerateDetails2')}>Next</button>
+        <button disabled={(Name.trim().length===0||dob.trim().length===0)}
+        onClick={()=>nav('GenerateDetails2')}>Next</button>
     </div>
   )
 }
